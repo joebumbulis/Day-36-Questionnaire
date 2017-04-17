@@ -1,26 +1,26 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import container from '../containers/all.js'
+import Question from './question.js'
 
 class Welcome extends React.Component{
   constructor(props){
     super(props);
-
-    this.startClick = this.startClick.bind(this)
   }
 
-startClick(){
-  console.log('Start Clicked');
-}
 
 render () {
     return (
       <section>
         <h3>Answer these 10 questions for Better Productivity</h3>
-        <button onClick={this.startClick}>START</button>
-
+        <h4><Link to="/question/1">START</Link></h4>
+        {this.props.questions.map((question, ind)=>{
+          return (<Question key={ind} question={question} onlyQuestion={true}/>)
+        })}
       </section>
     );
   }
 }
 
-export default Welcome;
+export default connect(container.allState)(Welcome);
