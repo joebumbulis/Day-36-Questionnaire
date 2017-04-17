@@ -1,6 +1,6 @@
 import React from 'react'
 
-class About extends React.Component {
+class Question_1 extends React.Component {
   render () {
     return (
       <main>
@@ -13,4 +13,4 @@ class About extends React.Component {
   }
 }
 
-export default About
+export default Question_1
