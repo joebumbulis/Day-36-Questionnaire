@@ -9,9 +9,11 @@ const NavBar = () => {
     <nav>
       <NavLink to="/">Home</NavLink>
       <br />
+      <NavLink to="/welcome">Welcome</NavLink>
+      <br />
       <NavLink to="/question_1">Question 1</NavLink>
       <br />
-      <NavLink to="/contact-us">Contact Them</NavLink>
+      <NavLink to="/results">Results</NavLink>
     </nav>
   )
 }
@@ -22,7 +24,7 @@ class AppRoot extends React.Component {
   }
 
   onHeaderClicked ({ history }) {
-    return <h1 onClick={() => history.push('/contact-us')}>Whoa!</h1>
+    return <h1 onClick={() => history.push('/contact-us')}>Productivity Questions!</h1>
   }
 
   render () {
