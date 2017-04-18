@@ -20,8 +20,8 @@ class Results extends React.Component {
   render () {
     return (
       <section>
-      <h2>Results</h2>
-      <button onClick={this.handleClick}>SUBMIT</button>
+        <h2>Results</h2>
+        <button onClick={this.handleClick}>SUBMIT</button>
       </section>
     );
   }

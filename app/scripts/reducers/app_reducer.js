@@ -31,11 +31,10 @@ export default function AppReducer (state, action) {
   switch(action.type){
       case "ANSWER_QUESTION":
       console.log('I answered the question!');
-              var newState =({
-                id: action.id,
-                answer: action.answer
-              })
-                  return Object.assign({}, state, newState)
+            let newAnswer = state.answers.slice();
+            let answer = {id: action.id, answer: action.answer};
+            newAnswer.push(answer)
+                  return Object.assign({}, state, {answers: newAnswer});
 
 
   default:
