@@ -24,12 +24,18 @@ class Results extends React.Component {
     return (
       <section>
         <h2>Results</h2>
-        {this.props.questions.map((question, j)=>{
-          return <p key={j}>{question.question}</p>
-        })};
-        {this.props.answers.map((answer, j)=>{
-          return <p key={j}>{answer.answer}</p>
-        })};
+        <table>
+          <tr>
+            {this.props.questions.map((question, j)=>{
+              return <th key={j}>{question.question}</th>
+            })}
+          </tr>
+          <tr>
+            {this.props.answers.map((answer, j)=>{
+              return <td key={j}>{answer.answer}</td>
+            })}
+            </tr>
+        </table>
         <button onClick={this.handleClick}>SUBMIT</button>
       </section>
     );
