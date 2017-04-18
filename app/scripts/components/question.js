@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import container from '../containers/all.js'
 import answerQuestion from '../actions/answerQuestion.js'
+import Results from './results.js'
 
 class Question extends React.Component {
   constructor(props){
@@ -27,7 +28,8 @@ class Question extends React.Component {
         return question.questionNumber == this.props.match.params.id;
       })[0];
     }
-    if (question.question === undefined){
+    if (question === undefined){
+      console.log('the thing is undefined');
       return (<div>
                 <Results />
               </div>)

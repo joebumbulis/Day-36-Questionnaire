@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import container from '../containers/all.js'
 
 class Results extends React.Component {
 
@@ -18,13 +20,20 @@ class Results extends React.Component {
   }
 
   render () {
+
     return (
       <section>
         <h2>Results</h2>
+        {this.props.questions.map((question, j)=>{
+          return <p key={j}>{question.question}</p>
+        })};
+        {this.props.answers.map((answer, j)=>{
+          return <p key={j}>{answer.answer}</p>
+        })};
         <button onClick={this.handleClick}>SUBMIT</button>
       </section>
     );
   }
 }
 
-export default Results
+export default connect(container.allState)(Results);
