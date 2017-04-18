@@ -1,5 +1,6 @@
 import { createStore } from 'redux'
 import store from '../store.js'
+import answerQuestion from '../actions/answerQuestion.js'
 
 
 const initialState = {
@@ -27,6 +28,18 @@ export default function AppReducer (state, action) {
     return initialState;
   }
 
+  switch(action.type){
+      case "ANSWER_QUESTION":
+      console.log('I answered the question!');
+              var newState =({
+                id: action.id,
+                answer: action.answer
+              })
+                  return Object.assign({}, state, newState)
 
-  return state;
+
+  default:
+    console.debug("Unhandled Action!", action.type);
+    return state;
+  }
 }
