@@ -36,6 +36,7 @@ class Question extends React.Component {
       return (<div>
                 {question.question}
                 <input ref="answer" type="text" placeholder="answer"/>
+                <h6>{question.questionNumber} of 10</h6>
                 <h4 onClick={this.handleClick}><Link to={"/question/" +  (Number(this.props.match.params.id) + 1)}>next</Link></h4>
               </div>)
             }
