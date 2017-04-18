@@ -25,17 +25,22 @@ class Results extends React.Component {
       <section>
         <h2>Results</h2>
         <table>
-          <tr>
-            {this.props.questions.map((question, j)=>{
-              return <th key={j}>{question.question}</th>
-            })}
-          </tr>
-          <tr>
-            {this.props.answers.map((answer, j)=>{
-              return <td key={j}>{answer.answer}</td>
-            })}
-            </tr>
+        <thead>
+              <tr>
+                {this.props.questions.map((question, j)=>{
+                  return <th key={j}>{question.question}</th>
+                })}
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                {this.props.answers.map((answer, j)=>{
+                  return <td key={j}>{answer.answer}</td>
+                })}
+                </tr>
+          </tbody>
         </table>
+
         <button onClick={this.handleClick}>SUBMIT</button>
       </section>
     );

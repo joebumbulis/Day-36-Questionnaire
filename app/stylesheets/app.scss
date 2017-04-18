@@ -1,5 +1,23 @@
 
 
-tr {
+thead {
+float: left;
+}
+
+tbody{
+  float: right;
+}
+
+th, {
+  display: flex;
+  flex-direction: column;
   border: solid .1rem black;
+  text-align: left;
+}
+
+td {
+  display: flex;
+  flex-direction: column;
+  border: solid .1rem black;
+  text-align: left;
 }
