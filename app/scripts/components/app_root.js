@@ -1,8 +1,7 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Route, Link, NavLink } from 'react-router-dom'
-import container from '../containers/all.js'
-
+import React from "react";
+import { connect } from "react-redux";
+import { Route, Link, NavLink } from "react-router-dom";
+import container from "../containers/all.js";
 
 const NavBar = () => {
   return (
@@ -15,22 +14,26 @@ const NavBar = () => {
       <br />
       <NavLink to="/results">Results</NavLink>
     </nav>
-  )
-}
+  );
+};
 
 class AppRoot extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
   }
 
-  onHeaderClicked ({ history }) {
-    return <h1 onClick={() => history.push('/contact-us')}>Productivity Questions!</h1>
+  onHeaderClicked({ history }) {
+    return (
+      <h1 onClick={() => history.push("/question/1")}>
+        Productivity Questions!
+      </h1>
+    );
   }
 
-  render () {
+  render() {
     return (
       <main>
-        <NavBar/>
+        <NavBar />
         <section>
           <Route render={this.onHeaderClicked} />
         </section>
@@ -39,4 +42,4 @@ class AppRoot extends React.Component {
   }
 }
 
-export default connect(container.allState)(AppRoot)
+export default connect(container.allState)(AppRoot);

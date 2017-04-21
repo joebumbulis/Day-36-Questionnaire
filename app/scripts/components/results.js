@@ -1,15 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
-import container from '../containers/all.js'
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import container from "../containers/all.js";
 
 class Results extends React.Component {
-
-  constructor (props) {
+  constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {};
 
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
@@ -19,25 +18,24 @@ class Results extends React.Component {
     // })
   }
 
-  render () {
-
+  render() {
     return (
       <section>
         <h2>Results</h2>
         <table>
-        <thead>
-              <tr>
-                {this.props.questions.map((question, j)=>{
-                  return <th key={j}>{question.question}</th>
-                })}
-              </tr>
+          <thead>
+            <tr>
+              {this.props.questions.map((question, j) => {
+                return <th key={j}>{question.question}</th>;
+              })}
+            </tr>
           </thead>
           <tbody>
-              <tr>
-                {this.props.answers.map((answer, j)=>{
-                  return <td key={j}>{answer.answer}</td>
-                })}
-                </tr>
+            <tr>
+              {this.props.answers.map((answer, j) => {
+                return <td key={j}>{answer.answer}</td>;
+              })}
+            </tr>
           </tbody>
         </table>
 
