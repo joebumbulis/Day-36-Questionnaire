@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
+import postAnswers from "../actions/post_answers.js";
 
 class Results extends React.Component {
   constructor(props) {
