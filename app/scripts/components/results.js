@@ -13,9 +13,7 @@ class Results extends React.Component {
 
   handleClick() {
     console.log("Results Clicked");
-    // this.setState({
-    //   name: e.target.value
-    // })
+    this.props.dispatch(postAnswers(answers));
   }
 
   render() {

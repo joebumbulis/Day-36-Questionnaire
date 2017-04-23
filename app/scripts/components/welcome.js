@@ -27,13 +27,13 @@ class Welcome extends React.Component {
     return (
       <section>
         <h3>Answer these 10 questions for Better Productivity</h3>
-        // <Route render={this.handleClick} />
         <h4><Link to="/question/1">START</Link></h4>
         {this.props.questions.map((question, ind) => {
-          // return <Question key={ind} question={question} onlyQuestion={true} />;
           return (
             <div>
-              <Link to={`/question/${question.id}`}>{question.question}</Link>
+              <Link to={`/question/${question.questionNumber}`} key={ind}>
+                {question.question}
+              </Link>
             </div>
           );
         })}
