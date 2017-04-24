@@ -1,4 +1,5 @@
 export default function answerQuestion(answer, id) {
+  console.log(answer);
   //All async action creators should return a function that takes 'dispatch' as its argument
   return dispatch => {
     //Before ajax call dispatch any needed actions

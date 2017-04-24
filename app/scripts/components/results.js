@@ -14,13 +14,16 @@ class Results extends React.Component {
 
   handleClick() {
     console.log("Results Clicked");
-    this.props.dispatch(postAnswers(answers));
+    this.props.dispatch(
+      postAnswers(this.props.answers.answer, this.props.answers.questionNumber)
+    );
   }
 
   render() {
     return (
       <section>
         <h2>Results</h2>
+        <h4>{this.props.confirmSavedSurvey}</h4>
         <table>
           <thead>
             <tr>

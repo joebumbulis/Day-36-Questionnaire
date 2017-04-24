@@ -1,6 +1,7 @@
 import { createStore } from "redux";
 import store from "../store.js";
 import answerQuestion from "../actions/answerQuestion.js";
+import postAnswers from "../actions/post_answers.js";
 
 const initialState = {
   questions: [
@@ -21,7 +22,8 @@ const initialState = {
     { questionNumber: 9, question: "Who needs to be updated on my progress?" },
     { questionNumber: 10, question: "Who can I ask for help?" }
   ],
-  answers: []
+  answers: [],
+  confirmSavedSurvey: ""
 };
 
 export default function AppReducer(state, action) {
@@ -37,11 +39,16 @@ export default function AppReducer(state, action) {
 
   switch (action.type) {
     case "ANSWER_QUESTION":
-      console.log("I answered the question!");
       let newAnswer = state.answers.slice();
       let answer = { id: action.id, answer: action.answer };
       newAnswer.push(answer);
       return Object.assign({}, state, { answers: newAnswer });
+
+    case "CONFIRM_SAVED":
+      console.log("the answers saved");
+      return Object.assign({}, state, {
+        confirmSavedSurvey: "Your answers saved"
+      });
 
     default:
       console.debug("Unhandled Action!", action.type);
